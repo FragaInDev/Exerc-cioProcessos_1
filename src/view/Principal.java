@@ -24,24 +24,10 @@ public class Principal {
 		
 		//Executa a ação de acordo com o SO
 		if (opt == 0){ //exec IP
-			if (os.contains("Windows")) {
-				String process = "IPCONFIG";
-				redeControl.readProcess(process);
-
-				
-			}else {
-				String process = "IFCONFIG";
-				redeControl.readProcess(process);
-			}
+			redeControl.ipRead();
 		}
 		else if (opt == 1) { //exec ping
-			if (os.contains("Windows")) {
-				String process = "PING -4 -n 10 www.google.com.br";
-				redeControl.readProcess(process);
-			}else {
-				String process = "PING -4 -c 10 www.google.com.br";
-				redeControl.readProcess(process);
-			}
+			redeControl.pingRead();
 		}else {}
 		
 	}
